@@ -59,7 +59,7 @@ lobsters_summarized <- lobster_abundance %>%
 # line and point plot
 lobsters_by_year <- ggplot(data = lobsters_summarized, aes(x = YEAR, y = COUNT)) + geom_point(aes(color = SITE)) + geom_line(aes(color = SITE)) 
 
-ggsave("figs/lobsters_by_year.png", plot = lobsters_by_year)
+ggsave("lobsters_by_year.png", plot = lobsters_by_year)
 ```
 
 ```{r}
@@ -70,6 +70,7 @@ lobster_size_lrg <- lobster_abundance %>%
     summarize(COUNT = n()) %>%
     drop_na()
 ```
+
 ```{r}
 # dodged bar plot
 lobsters_by_size <- ggplot(data = lobster_size_lrg, aes(x = SITE, y = COUNT, fill = SIZE_BIN)) + geom_col(position = "dodge")
