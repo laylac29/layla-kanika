@@ -1,5 +1,23 @@
 ---
 title: "Owner Analysis"
 format: html
+author: Layla Chirar
 ---
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(here)
+```
+
+```{r}
+lobster_abundance <- read_csv(here::here("data/Lobster_Abundance_All_Years_20220829.csv"))
+```
+
+
+```{r}
+summary(lobster_abundance)
+```
 
