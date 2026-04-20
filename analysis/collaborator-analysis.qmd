@@ -21,7 +21,6 @@ lobster_traps <- read_csv(here::here("data/Lobster_Trap_Counts_All_Years_2021051
 lobster_traps <- lobster_traps %>% 
     mutate(TRAPS = na_if(TRAPS, -99999))
 
-
 not_napl_site <- lobster_traps %>% 
     filter(SITE != "NAPL")
 
@@ -29,8 +28,65 @@ carp_and_20_traps <- lobster_traps %>%
     filter(SITE == "CARP" & TRAPS > 20)
 
 # grouping and summarizing by max
-max_lobster_traps <- lobster_traps %>% 
+max_lobster <- lobster_traps %>% 
     group_by(SITE, MONTH) %>%
     summarize(MAX_TRAPS = max(TRAPS, na.rm = TRUE))
+```
+
+## Exercise: Data Visualization
+
+```{r}
+## Run this chunk to test exercises ##
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+lobster_traps <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&entityid=66dd61c75bda17c23a3bce458c56ed84") %>% 
+    mutate(TRAPS = na_if(TRAPS, -99999))
+
+```
+
+```{r}
+lobster_trap_yearly <- ggplot(data = lobster_traps, aes(x = TRAPS)) +
+    geom_histogram() +
+    facet_wrap( ~ YEAR)
+
+lobster_trap_yearly
+```
+
+```{r}
+lobsters_traps_summarize <- lobster_traps %>% 
+  group_by(SITE, YEAR) %>% 
+  summarize(TOTAL_TRAPS = sum(TRAPS, na.rm = TRUE))
+
+# line plot
+ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
+    geom_line(aes(color = SITE))
+
+# line and point plot
+ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
+    geom_point(aes(color = SITE)) +
+    geom_line(aes(color = SITE))
+
+
+```
+
+```{r}
+lobster_traps_fishing_pressure <- lobster_traps %>% 
+    filter(YEAR %in% c(2019, 2020, 2021)) %>%
+    mutate(FISHING_PRESSURE = if_else(TRAPS >= 8, true = "high", false = "low")) %>%
+    group_by(SITE, FISHING_PRESSURE) %>%
+    summarize(COUNT = n()) %>%
+    drop_na()
+
+# bar plot
+ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
+    geom_col()
+
+# dodged bar plot
+ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
+    geom_col(position = "dodge")
 ```
 
