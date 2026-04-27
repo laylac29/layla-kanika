@@ -49,9 +49,7 @@ library(tidyr)
 ```
 
 ```{r}
-lobster_trap_yearly <- ggplot(data = lobster_traps, aes(x = TRAPS)) +
-    geom_histogram() +
-    facet_wrap( ~ YEAR)
+lobster_trap_yearly <- ggplot(data = lobster_traps, aes(x = TRAPS)) + geom_histogram() + facet_wrap( ~ YEAR)
 
 lobster_trap_yearly
 ```
@@ -62,13 +60,10 @@ lobsters_traps_summarize <- lobster_traps %>%
   summarize(TOTAL_TRAPS = sum(TRAPS, na.rm = TRUE))
 
 # line plot
-ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
-    geom_line(aes(color = SITE))
+ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) + geom_line(aes(color = SITE))
 
 # line and point plot
-ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) +
-    geom_point(aes(color = SITE)) +
-    geom_line(aes(color = SITE))
+ggplot(data = lobsters_traps_summarize, aes(x = YEAR, y = TOTAL_TRAPS)) + geom_point(aes(color = SITE)) + geom_line(aes(color = SITE))
 
 
 ```
@@ -82,11 +77,15 @@ lobster_traps_fishing_pressure <- lobster_traps %>%
     drop_na()
 
 # bar plot
-ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
-    geom_col()
+ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) + geom_col()
 
 # dodged bar plot
-ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) +
-    geom_col(position = "dodge")
+ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE)) + geom_col(position = "dodge")
+```
+
+```{r}
+ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE, name = "Fishing Pressure")) + geom_col(position = "dodge") + ggtitle("Fish Count per Site")
+
+ggsave("Fish Count per Site", plot = get_last_plot(), device = "png", path = "figs")
 ```
 
