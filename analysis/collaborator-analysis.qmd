@@ -86,6 +86,6 @@ ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FI
 ```{r}
 ggplot(data = lobster_traps_fishing_pressure, aes(x = SITE, y = COUNT, fill = FISHING_PRESSURE, name = "Fishing Pressure")) + geom_col(position = "dodge") + ggtitle("Fish Count per Site")
 
-ggsave("Fish Count per Site", plot = get_last_plot(), device = "png")
+ggsave("Fish Count per Site", plot = get_last_plot(), device = "png", path = "figs")
 ```
 
