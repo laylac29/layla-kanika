@@ -1,5 +1,12 @@
 ---
-title: "Lobster Report"
+title: "Lobster Report - Layla and Kanika"
 format: html
 ---
 
+# Data
+The data was downloaded on 4/20/2026 from https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-sbc.77.8. It is provided from the Santa Barbara Coastal Long Term Ecological Research (SBC LTER).
+
+# Abstract Summary
+This data tracks abundance, size, and fishing pressure of California spiny lobster along the Santa Barbara Channel, including sites inside and outside marine protected areas established in 2012. It supports studying how fishing impacts kelp forest ecosystems using diver surveys and trap counts collected annually and throughout the fishing season.
+
+#Owner Analysis
