@@ -16,3 +16,6 @@ This data tracks abundance, size, and fishing pressure of California spiny lobst
 ```{r}
 lobsters_by_year
 ```
+# Collaborator Analysis
+
+# Summary
