@@ -84,7 +84,7 @@ lobsters_by_size
 ```
 
 ```{r}
-ggsave("lobsters_by_size.png", plot = lobsters_by_year)
+ggsave("lobsters_by_size.png", plot = lobsters_by_size)
 ```
 
 
