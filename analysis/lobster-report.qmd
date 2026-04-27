@@ -22,3 +22,5 @@ This data tracks abundance, size, and fishing pressure of California spiny lobst
 ![](count_by_size_per_pressure.png){fig-alt = "Plot showing the lobster count per site with two bars, one being high pressure and one being low pressure."}
 
 ## Summary
+
+We learned that overall, when fishing pressure is low, there is a higher amount of lobster observed. When fishing pressure is high, the CARP site, which already abundant number of lobsters was less affected, leaving more lobsters observed. However, in the IVEE site, which has the highest overal abundance over the years, there were no lobsters observed in high fishing pressure. This is interesting because despite both having high abundance of lobsters, fishing pressure effected the lobsters observed unequally.
