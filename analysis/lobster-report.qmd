@@ -15,20 +15,9 @@ This data tracks abundance, size, and fishing pressure of California spiny lobst
 
 ![](lobsters_by_year.png){fig-alt="Plot showing the lobster count per year for each location"}
 
-<<<<<<< HEAD
-# Collaborator Analysis
-
-```{r}
-count_by_size_per_pressure.png
-
-
-```
-
-# Summary
-=======
 ## Collaborator Analysis
 ![](count_by_size_per_pressure.png){fig-alt = "Plot showing the lobster count per site with two bars, one being high pressure and one being low pressure."}
 
 
 ## Summary
->>>>>>> a34a4e7256e98c637e0c3a15cf906a2d2b749bcd
+
