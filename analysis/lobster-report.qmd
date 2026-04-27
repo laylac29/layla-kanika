@@ -19,6 +19,6 @@ This data tracks abundance, size, and fishing pressure of California spiny lobst
 
 ## Collaborator Analysis
 
-![](count_by_size_per_pressure.png){fig-alt = "Plot showing the lobster count per site with two bars, one being high pressure and one being low pressure."}
+![](count_by_size_per_pressure.png){fig-alt = "Plot showing the lobster count per site with two bars, one being high pressure and one being low pressure. High fishing pressure has 8 or more traps while low fishing pressure has less than 8 traps."}
 
 ## Summary
